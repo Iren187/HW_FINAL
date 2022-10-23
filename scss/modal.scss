@@ -1,0 +1,52 @@
+.popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background:  rgba(32,32,64,0.7);
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    &__body {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 10px;
+    }
+    
+    &__content {
+        background: $grey_big;
+        max-width: 650px;
+        width: 100%;
+        padding: 30px;
+        border-radius: 12px;
+    }
+
+    &__title {
+        display: flex;
+        gap: 30px;
+        @extend %Hero;
+        background: $gradient_Red_Text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+    }
+
+    &__close {
+        flex: 0 0 32px;
+        align-self: flex-start;
+    }
+
+    .form-text,
+    .form-textarea {
+        background: $white;
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid $white;
+        border-radius: 8px;
+        width: 100%;
+        @extend %Paragraph;
+        padding: 15px;
+    }
+} 

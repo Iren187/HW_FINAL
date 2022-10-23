@@ -1,0 +1,28 @@
+html {
+    min-height: 100%;
+}
+
+a {
+    color: $blue_Regular;
+
+    &:hover {
+        color: $Accent_color;
+    }
+}
+
+img {
+    display: block;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $grey_text;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: $grey_text;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: $grey_text;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: $grey_text;
+}

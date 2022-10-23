@@ -1,0 +1,131 @@
+
+.header {
+    padding: 0 60px;
+    padding-top: 50px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.header_contact {
+    @extend %flex_sb;
+}
+
+.header_contact {
+    margin-bottom: 16px;
+    gap: 6px;
+}
+
+.lang {
+    @extend %flex_centr;
+    font-family: $font-bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: $white;
+    width: 33px;
+    height: 25px; 
+    cursor: pointer;
+
+    &:hover {
+        background-color: $Accent_color;
+        border-radius: 8px;
+    }
+}
+
+.lang_list {
+    display: flex;
+}
+
+.active {
+    background-color: $Accent_color;
+    border-radius: 8px;
+}
+
+.address {
+    @extend %address;
+    color: $white;
+    
+}
+
+.contact {
+    @extend %Paragraph;
+    color: $white;
+}
+
+.fb_link_svg {
+    cursor: pointer;
+
+    &:hover {
+        path {
+            fill: $Accent_color;
+        }
+    }
+
+    path {
+        transition: fill .3s ease;
+    }
+}
+
+.nav_list {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    
+    &__item {
+        font-family: $font-bold;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: right;
+    }
+    
+    &__link {
+        border-bottom: 2px solid transparent;
+        color: $white;
+        padding-bottom: 3px;
+        position: relative;
+        
+        &:hover {
+            color: $white;
+
+            &:after {
+                opacity: 1;
+                width: 100%;
+            }
+        }
+
+        &.is-active {
+            color: $Accent_color;
+
+            &::after {
+                background-color: $Accent_color;
+                width: 100%;
+                opacity: 1;
+            }
+        }
+
+        &:after {
+            background-color: $white;
+            content: '';
+            height: 2px;
+            opacity: 0;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%);
+            transition: width .3s ease-out, opacity .3s ease-out .1s;
+            width: 0;
+        }
+    }
+}
+
+.point {
+    background: $grey_separator;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
