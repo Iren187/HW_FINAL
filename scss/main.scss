@@ -1,6 +1,7 @@
 .section_top {
     background: $gradient_Supersoft;
     border-radius: 0 0 12px 12px;
+    margin-bottom: 20px;
     position: relative;
 
     &::after,
@@ -24,6 +25,10 @@
         top: 100%;
         width: calc(100% - 40px);
     }
+
+    + .grid_column__card {
+        margin-top: 80px;
+    }
 }
 
 .h_logo {
@@ -44,12 +49,42 @@
     align-items: center;
     justify-content: center;
     min-height: 800px;
+    overflow: hidden;
     position: relative;
+    
+    @media (min-width: 1720px) {
+        min-height: 1000px;
+    }
+
+    @media (max-width: 1024px) {
+        min-height: 768px;
+        margin-bottom: 60px;
+    }
+
+    @media (max-width: 768px) {
+        min-height: 1024px;
+    }
 
     .content {
         position: relative;
         @extend %Hero;
         color: $white;
+
+        @media (max-width: 768px) {
+            text-align: center; 
+        }
+    }
+}
+
+.section-pt {
+    padding-top: 176px;
+
+    @media (max-width: 1023px) {
+        padding-top: 280px;
+    }
+
+    @media (max-width: 767px) {
+        padding-top: 132px;
     }
 }
 
@@ -84,14 +119,37 @@ svg {
     display: flex;
     max-width: 1080px;
     margin: 0 auto;
+    overflow: hidden;
     padding: 60px 0;
+
+    @media (max-width: 1023px) {
+        display: block;
+        padding: 0;
+    }
 
     .section_list {
         text-align: right;
         @extend %Hero;
-        color: $grey_text;
         border-right: 4px solid rgba($white, .3);
         padding: 15px 60px 15px 0;
+
+        @media (max-width: 1023px) {
+            border: none;
+            padding: 0;
+        }
+
+        &__link {
+            color: $grey_text;
+        }
+
+        ul {
+            @media (max-width: 1023px) {
+                display: flex;
+                overflow-x: auto;
+                gap: 30px;
+                padding: 0 60px;
+            }
+        }
     }
 
     .active {
@@ -117,84 +175,24 @@ svg {
 .section_title {
     padding: 43px 43px 60px;
 
-    .title {
-       @extend %h2;
-       color: $white;
-       margin-bottom: 30px; 
+    @media (max-width: 1023px) {
+        border-top: 4px solid rgba($white, .3);
+        margin: 0 auto;
+        margin: 0 60px;
+        padding: 60px 0;
     }
-
+    
+    .title {
+        @extend %h2;
+        color: $white;
+        margin-bottom: 30px;
+        
+    }
+    
     .section_text {
         @extend %Paragraph2;
         color: $white;
     }
-}
-
-.section_card {
-   padding: 0 60px;
-    max-width: 1440px;
-    margin: 0 auto;
-
-    .img_svg__card {
-        cursor: pointer;
-        margin-bottom: 10px;
-
-        &:hover {
-            .svg_1 {
-                fill: $Accent_color;
-            }
-
-            .svg_2 {
-                stroke: $Accent_color;
-            }
-        }
-    
-        .svg_1,
-        .svg_2 {
-            transition: .3s ease;
-        }
-    }
-
-    .section_card__title {
-        @extend %Hero;
-        background: $gradient_Red_Text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 30px;
-        display: inline-block;
-    }
-}
-
-.section_card__content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    .card__content {
-        flex-direction: column;
-        align-items: flex-start;
-        flex: 1 0 33.3333%;
-        max-width: 400px;
-        margin-bottom: 60px;
-
-        img {
-            padding: 14px;
-            background: $white;
-            border-radius: 24px;
-            margin-bottom: 30px;
-        }
-
-        h3 {
-            @extend %h3;
-            color: $blue_Regular;
-            margin-bottom: 15px;
-        }
-
-        p {
-           @extend %Paragraph;
-           color: $white; 
-        }
-    }
-   
 }
 
 .banner_content {
@@ -202,42 +200,67 @@ svg {
     background: $grey_big;
     border-radius: 12px;
     overflow: hidden;
+
+    @media (max-width: 880px) {
+        flex-direction: column;
+    }
     
     &__wrapper {
         margin: 80px auto 60px;
         max-width: 1320px;
+        padding: 0 30px;
     }
 
     &__img {
         flex: 1 0 auto;
         max-width: 400px;
+
+        @media (max-width: 880px) {
+            max-width: 100%;
+        }
+
+        img {
+            object-fit: cover;
+            height: 100%;
+
+            @media (max-width: 880px) {
+                height: auto;
+                width: 100%;
+            }
+        }
     }
 
     &__body {
         padding: 30px;
+        word-break: break-word;
 
         h2 {
             @extend %Hero;
             background: $gradient_Red_Text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 30px; 
-        }
+            margin-bottom: 30px;
 
-        h4 {
-            @extend %h4;
-            color: $grey_text;
-            margin-bottom: 6px;
-        }
-
-        p {
-            @extend %Paragraph3;
-            color: $grey_text;
-        }
+            @media (max-width: 880px) {
+                font-size: 30px;
+                line-height: 37px;
+            }
+        }  
+    }
+    
+    h4 {
+        @extend %h4;
+        color: $grey_text;
+        margin-bottom: 6px;
+    }
+    
+    p {
+        @extend %Paragraph3;
+        color: $grey_text;
     }
 
     &__svg {
-         margin-bottom: 5px;   
+        margin-bottom: 5px;   
     }
 }
 
@@ -250,6 +273,10 @@ svg {
 .section_teaser {
     padding: 30px;
     background: $grey_big;
+
+    &:last-child {
+        padding-bottom: 0;
+    }
 
     &__svg {
         margin-bottom: 10px;
@@ -281,20 +308,38 @@ svg {
 
     &__card {
         display: flex;
+        flex-wrap: wrap;
         gap: 30px;
+        padding-bottom: 30px;
+        border-bottom: 2px solid $grey_color;
     }
 
     &__container {
-        max-width: 420px;
+        flex: 1 0 calc(33.3333% - 20px);
+        max-width: calc(33.3333% - 20px);
         background: $white;
         border-radius: 8px;
+        
+        @media (max-width: 1023px) {
+            flex: 1 0 calc(50% - 20px);
+            max-width: 100%;
+            
+            img {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 767px) {
+            flex: 1 0 100%;
+        }
 
         &__body {
             padding: 30px 30px 70px 30px;
 
-                h4 {
+                &__title {
                     @extend %h4;
-                    color: $blue_hver;
+                    color: $blue_Regular;
+                    display: block;
                     margin-bottom: 15px;
                 }
         
@@ -307,9 +352,9 @@ svg {
                 }
         
                 p {
+                    @extend %Paragraph3;
                     border-top: 4px solid #E6E6F0;
                     padding-top: 15px;
-                    @extend %Paragraph3;
                 }
         }
     }

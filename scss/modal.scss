@@ -1,12 +1,23 @@
 .popup {
-    display: none;
     position: fixed;
     width: 100%;
     height: 100%;
     background:  rgba(32,32,64,0.7);
-    z-index: 1;
+    opacity: 0;
+    transition: opacity .3s ease-out, z-index 0s ease .3s;
+    z-index: -1;
     top: 0;
     left: 0;
+    
+    &.open {
+        opacity: 1;
+        transition: opacity .3s ease-out;
+        z-index: 10;
+
+        .popup__content {
+            transform: perspective(600px) translate(0, 0) rotateX(0);
+        }
+    }
 
     &__body {
         min-height: 100%;
@@ -22,6 +33,8 @@
         width: 100%;
         padding: 30px;
         border-radius: 12px;
+        transition: .3s ease-out;
+        transform: perspective(600px) translate(0, -100%) rotateX(45deg);
     }
 
     &__title {
@@ -30,12 +43,32 @@
         @extend %Hero;
         background: $gradient_Red_Text;
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
+        -webkit-text-fill-color: transparent;  
+    }
+
+    h2 {
+       margin-bottom: 30px; 
+    }
+
+    h3 {
+       @extend %H3_Caps;
+        font-size: 14px;
+        line-height: 17px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: $grey_text;
+
     }
 
     &__close {
         flex: 0 0 32px;
         align-self: flex-start;
+        border-radius: 8px;
+
+        &:hover {
+            background: $grey_separator;
+        }
+
     }
 
     .form-text,
@@ -48,5 +81,14 @@
         width: 100%;
         @extend %Paragraph;
         padding: 15px;
+        transition: border .3s ease-out;
+
+        &:focus {
+            border-color: $blue_Regular;
+        }
+    }
+
+    .btn {
+        width: 100%;
     }
 } 

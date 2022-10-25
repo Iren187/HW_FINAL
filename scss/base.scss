@@ -26,3 +26,23 @@ img {
 :-moz-placeholder { /* Firefox 18- */
     color: $grey_text;
 }
+
+.btn {
+    @extend %h4;
+    color: $white;
+    padding: 18px 30px;
+    text-align: center;
+    background: $blue_Regular;
+    box-shadow: 0 0 20px rgba($blue_Regular, .5);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background .3s ease-out;
+
+    &:hover {
+        background: $blue_hover;
+    }
+
+    &:active {
+        background-color: $blue_active;
+    }
+}

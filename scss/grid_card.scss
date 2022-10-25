@@ -7,6 +7,10 @@
 }
 
 .grid_column {
+    &__card {
+        margin-top: 60px;
+    }
+
     &__wrapper {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -14,13 +18,20 @@
         max-width: 1720px;
         margin-left: auto;
         margin-right: auto;
-
+        
         @media (min-width: 1720px) {
             margin-bottom: 60px;
             border-radius: 12px;
             overflow: hidden;
         }
 
+        @media (max-width: 1023px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        @media (max-width: 767px) {
+            grid-template-columns: 1fr;
+        }
         > div a {
             display: grid;
             align-items: center;
@@ -31,7 +42,6 @@
 
     &__card__1 {
         background: $grid_card_1;
-    
     }
 
     &__card__2 {
