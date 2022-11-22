@@ -87,6 +87,12 @@ meter {
   line-height: 46px;
 }
 
+.about_main_content .about_main_content_top .main_content .title {
+  font-family: "Monserrat-Bold";
+  font-size: 38px;
+  line-height: 46px;
+}
+
 .section_title .title {
   font-family: "Monserrat-Bold";
   font-size: 30px;
@@ -119,7 +125,7 @@ meter {
   line-height: 26px;
 }
 
-.section_title .section_text {
+.about_main_content .about_main_content_top .main_content p, .section_title .section_text {
   font-family: "Monserrat-Regular";
   font-size: 19px;
   line-height: 30px;
@@ -1172,6 +1178,27 @@ svg {
   transform: rotate(-135deg);
   transform: rotate(-135deg);
   transform: rotate(-135deg);
+}
+
+.about_main_content {
+  padding: 176px 180px 0;
+}
+.about_main_content .about_main_content_top {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.about_main_content .about_main_content_top .main_content {
+  max-width: 980px;
+}
+.about_main_content .about_main_content_top .main_content .title {
+  background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 28px;
+}
+.about_main_content .about_main_content_top .main_content p {
+  color: #000;
 }
 
 /*# sourceMappingURL=style.css.map */

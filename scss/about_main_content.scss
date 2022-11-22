@@ -1,0 +1,27 @@
+.about_main_content {
+    padding: 176px 180px 0 ;
+
+    .about_main_content_top {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+
+        .main_content {
+            max-width: 980px;
+
+            .title {
+                @extend %Hero2;
+                background: $gradient_Red_Text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 28px;
+            }
+
+            p {
+                @extend %Paragraph2;
+                color: $grid_card_12;
+            }
+
+        } 
+    }    
+}
