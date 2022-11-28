@@ -40,6 +40,13 @@
     }
 }
 
+.header_logo {
+    transition: transform 3s linear;
+    &:hover {
+        transform:rotateY(360deg)
+    }
+}
+
 @media (max-width: 1023px) {
     .fix_size_main.header_contact {
         flex-direction: column;
